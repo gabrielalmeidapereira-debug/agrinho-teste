@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRINHO OS v2.026 - Enterprise Edition</title>
+    <link rel="stylesheet" medical="all" href="style.css">
+</head>
+<body>
+
+    <div id="desktop">
+        <div class="icon" onclick="toggleWin('win-about')">
+            <div class="icon-shape green-tri"></div>
+            <p>AGRINHO.EXE</p>
+        </div>
+
+        <div class="icon" onclick="toggleWin('win-terminal')">
+            <div class="icon-shape terminal-box">_ ></div>
+            <p>PROMPT</p>
+        </div>
+
+        <div class="icon" onclick="toggleWin('win-evo')">
+            <div class="icon-shape evo-box">EVO</div>
+            <p>EVOLUÇÃO</p>
+        </div>
+
+        <div class="window" id="win-about" style="top: 50px; left: 150px;">
+            <div class="title-bar">
+                <span>Agrinho_Info_2026</span>
+                <span onclick="toggleWin('win-about')" class="close-btn">[X]</span>
+            </div>
+            <div class="win-content">
+                <div class="agrinho-logo">AGRINHO 2026: Rumo ao Campo Digital</div>
+                <p>Status do Sistema: <span style="color: yellow;">OPERACIONAL</span></p>
+                <p>O Agrinho 2026 convida todos os alunos a explorarem a **Inovação no Campo**. Como o pixel se torna grão? Como o código protege a floresta?</p>
+                <hr>
+                <ul>
+                    <li>Preservação de Mananciais</li>
+                    <li>Drones de Baixo Bitrate</li>
+                    <li>Sustentabilidade 1.0</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="window" id="win-terminal" style="top: 200px; left: 400px; width: 400px;">
+            <div class="title-bar">
+                <span>Prompt de Comando - Safra Digital</span>
+                <span onclick="toggleWin('win-terminal')" class="close-btn">[X]</span>
+            </div>
+            <div class="win-content" id="terminal-body">
+                <div class="terminal-line">C:\AGRINHO2026> inicializando protocolos...</div>
+                <div class="terminal-line">C:\AGRINHO2026> carregando dados da colheita... OK</div>
+                <div class="terminal-line">C:\AGRINHO2026> <span id="typed"></span><span class="cursor"></span></div>
+            </div>
+        </div>
+
+        <div class="window" id="win-evo" style="top: 100px; left: 250px; width: 500px; display: none;">
+            <div class="title-bar">
+                <span>Evolucao_Sustentavel.doc</span>
+                <span onclick="toggleWin('win-evo')" class="close-btn">[X]</span>
+            </div>
+            <div class="win-content">
+                <div style="text-align: center; text-decoration: underline; margin-bottom: 15px;">MARCOS DA AGRICULTURA E SUSTENTABILIDADE</div>
+                <table class="evo-table">
+                    <tr>
+                        <td class="year">1970s</td>
+                        <td><strong>Revolução Verde:</strong> Expansão tecnológica no campo, mecanização e criação da EMBRAPA (1973) para desenvolvimento de tecnologias tropicais.</td>
+                    </tr>
+                    <tr>
+                        <td class="year">1992</td>
+                        <td><strong>Eco-92 (Rio):</strong> Consolidação do conceito de "Desenvolvimento Sustentável". Início do Sistema de Plantio Direto em larga escala no Brasil.</td>
+                    </tr>
+                    <tr>
+                        <td class="year">2012</td>
+                        <td><strong>Código Florestal:</strong> Lei 12.651 estabelece normas sobre a proteção da vegetação nativa e áreas de preservação permanente (APP).</td>
+                    </tr>
+                    <tr>
+                        <td class="year">2020s</td>
+                        <td><strong>Agricultura 4.0/5.0:</strong> Uso de Big Data, IoT e IA para otimização de recursos e redução drástica do impacto ambiental.</td>
+                    </tr>
+                </table>
+                <p style="font-size: 10px; margin-top: 15px; color: #777;">Fontes: Wikipédia (Agricultura no Brasil / Sustentabilidade), Portal Embrapa, MMA.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div class="start-btn">
+            <div style="width: 15px; height: 15px; background: red; display: inline-block;"></div>
+            Iniciar
+        </div>
+        <div style="margin-left: 10px; font-size: 12px; color: #333;">Versão 2026.1.0 (Agrinho Edition)</div>
+        <div id="clock">00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
