@@ -1,17 +1,15 @@
-/* --- VARIÁVEIS E TEMA --- */
 :root {
-    --bg-main: #000000; /* Fundo alterado para preto total */
+    --bg-main: #000000;
     --win-bg: #1e1e1e;
-    --win-border: #444;
-    --win-shadow: #000;
     --neon-green: #39ff14;
     --dark-green: #003300;
-    --text-gray: #b0b0b0;
-    --header-blue: #000080;
 }
 
-/* --- RESET E ESTILO --- */
-* { box-sizing: border-box; cursor: default; }
+/* VOLTANDO COM O MOUSE DO CÓDIGO ANTIGO */
+* { 
+    box-sizing: border-box; 
+    cursor: url('https://cur.cursors-4u.net/games/gam-4/gam372.cur'), auto; 
+}
 
 body {
     background-color: var(--bg-main);
@@ -24,21 +22,18 @@ body {
     flex-direction: column;
 }
 
-/* --- DESKTOP AREA --- */
 #desktop {
     flex: 1;
-    padding: 20px;
     position: relative;
-    background-color: #000; /* Garante que o fundo seja preto */
+    background-color: #000;
 }
 
 .icon {
     width: 80px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px;
     font-size: 12px;
     color: white;
-    text-shadow: 2px 2px #000;
     cursor: pointer;
 }
 
@@ -46,24 +41,20 @@ body {
     width: 50px;
     height: 50px;
     margin: 0 auto 5px;
-    image-rendering: pixelated;
     border: 2px solid var(--neon-green);
 }
 
 .green-tri { background: var(--neon-green); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
-.terminal-box { background: #444; color: white; border-color: #fff; display: flex; align-items: center; justify-content: center; }
+.terminal-box { background: #444; color: white; display: flex; align-items: center; justify-content: center; }
 .evo-box { background: #003300; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-/* --- JANELAS --- */
 .window {
     position: absolute;
     background: var(--win-bg);
     border: 3px solid #777;
     border-top-color: #fff;
     border-left-color: #fff;
-    box-shadow: 5px 5px 0px var(--win-shadow);
-    min-width: 300px;
-    z-index: 10;
+    box-shadow: 5px 5px 0px #000;
 }
 
 .title-bar {
@@ -72,46 +63,46 @@ body {
     padding: 4px 8px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-weight: bold;
-    font-size: 14px;
-    user-select: none;
 }
-
-.close-btn { cursor: pointer; }
 
 .win-content {
     padding: 15px;
     border: 2px inset #444;
     margin: 2px;
-    max-height: 400px;
     overflow-y: auto;
     background: #000;
 }
 
-.agrinho-logo {
-    color: var(--neon-green);
-    text-align: center;
-    font-size: 20px;
-    border: 2px dashed var(--neon-green);
-    padding: 10px;
-    margin-bottom: 10px;
-    animation: flicker 2s infinite;
+/* ESTILO DA TABELA DE EVOLUÇÃO (TEXTOS AUMENTADOS) */
+.evo-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    color: var(--neon-green); 
 }
 
-@keyframes flicker {
-    0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 0.9; }
+.evo-table td { 
+    border: 1px solid var(--dark-green); 
+    padding: 12px; /* Mais espaçamento */
+    vertical-align: top; 
+    font-size: 16px; /* Texto maior */
+    line-height: 1.4;
 }
 
-/* --- BARRA DE TAREFAS --- */
+.year { 
+    color: yellow; 
+    font-weight: bold; 
+    font-size: 18px; /* Ano maior */
+    white-space: nowrap; 
+}
+
 #taskbar {
     height: 40px;
     background: #c0c0c0;
     border-top: 3px solid #fff;
     display: flex;
     align-items: center;
-    padding: 0 5px;
-    z-index: 100;
+    padding: 0 10px;
     color: black;
 }
 
@@ -119,26 +110,12 @@ body {
     background: #c0c0c0;
     border: 2px solid;
     border-top-color: #fff; border-left-color: #fff;
-    border-right-color: #000; border-bottom-color: #000;
     padding: 2px 10px;
     font-weight: bold;
     display: flex; align-items: center; gap: 5px;
 }
 
-#clock {
-    margin-left: auto;
-    border: 2px inset #eee;
-    padding: 2px 10px;
-    background: #c0c0c0;
-    font-weight: bold;
-}
-
-/* --- TERMINAL --- */
-.terminal-line { margin: 5px 0; color: #39ff14; }
+#clock { margin-left: auto; font-weight: bold; }
+.terminal-line { color: #39ff14; }
 .cursor { display: inline-block; width: 8px; height: 15px; background: var(--neon-green); animation: blink 0.8s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-
-/* --- TABELA --- */
-.evo-table { width: 100%; border-collapse: collapse; margin-top: 10px; color: var(--neon-green); }
-.evo-table td { border: 1px solid var(--dark-green); padding: 8px; vertical-align: top; font-size: 13px; }
-.year { color: yellow; font-weight: bold; white-space: nowrap; }
